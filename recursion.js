@@ -43,19 +43,19 @@ const palindromeRecursive = string => {
   // r a c e c a r
   console.log(string);
 
+  string = string.trim();
   if (string.length < 2) {
     return true;
   }
 
-  if (string[string.length - 1] === string[0]) {
+  if (string[string.length - 1].toUpperCase() === string[0].toUpperCase()) {
     return palindromeRecursive(string.slice(1, string.length - 1));
-  } else {
-    return false;
   }
+
+  return false;
 };
 
-console.log(palindromeRecursive("racecar"));
-console.log(palindromeRecursive("notpalindrome"));
+console.log(palindromeRecursive("bAcc ab"));
 
 const palindromeIterative = string => {
   let palindrome = true;
@@ -66,6 +66,5 @@ const palindromeIterative = string => {
   }
   return palindrome;
 };
-
-console.log(palindromeIterative("racecar"));
-console.log(palindromeIterative("notpalindrome"));
+let arr = [1, 2, 3];
+arr[3] = 4;
